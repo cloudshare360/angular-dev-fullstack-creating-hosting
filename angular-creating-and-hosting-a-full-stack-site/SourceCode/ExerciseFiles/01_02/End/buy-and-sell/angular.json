@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "buy-and-sell"
+    }
+  },
+  "defaultProject": "buy-and-sell",
+  "cli": {
+    "analytics": "544670a1-80f5-47cc-a146-daa926dd587b"
+  }
 }
