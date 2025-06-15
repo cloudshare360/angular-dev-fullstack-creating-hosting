@@ -39,8 +39,8 @@ current_dir=$(pwd)
 echo "The current directory is: $current_dir"
 
 # Install angular project node modules
-echo "📦 Installing npm modules for Angular Project..."
-cd /workspaces/angular-fullstack-dev/angular-creating-and-hosting-a-full-stack-site/SourceCode/ExerciseFiles/01_02/End/buy-and-sell && npm install 
+# echo "📦 Installing npm modules for Angular Project..."
+# cd /workspaces/angular-fullstack-dev/angular-creating-and-hosting-a-full-stack-site/SourceCode/ExerciseFiles/01_02/End/buy-and-sell && npm install 
 
 # Verify installations
 echo "✅ Verifying installations..."
@@ -68,4 +68,3 @@ source "$PROFILE_FILE"
 
 echo "🎉 Setup complete! Node.js v12.22.0 and Angular CLI v9.1.9 are now available."
 echo "🚀 Start your Angular projects with: ng new your-project --strict false"
-npm run start
