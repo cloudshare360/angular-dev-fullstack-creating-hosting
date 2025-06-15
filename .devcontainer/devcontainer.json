@@ -28,5 +28,6 @@
 			"label": "Angular Dev Server",
 			"onAutoForward": "notify"
 		}
-	}
+	},
+	"postCreateCommand": "chmod +x ./setup-angular-env.sh && ./setup-angular-env.sh"
 }
