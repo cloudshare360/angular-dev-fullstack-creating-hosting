@@ -1,11 +1,17 @@
 {
 	"name": "Angular 9 Development",
-	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-	
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "12"
+		}
+	},
 	"customizations": {
 		"vscode": {
 			"settings": {
-				"terminal.integrated.shellArgs.linux": ["-l"],
+				"terminal.integrated.shellArgs.linux": [
+					"-l"
+				],
 				"terminal.integrated.defaultProfile.linux": "bash"
 			},
 			"extensions": [
@@ -14,26 +20,13 @@
 			]
 		}
 	},
-
-	"forwardPorts": [4200],
-
+	"forwardPorts": [
+		4200
+	],
 	"portsAttributes": {
 		"4200": {
 			"label": "Angular Dev Server",
 			"onAutoForward": "notify"
 		}
-	},
-
-	"postCreateCommand": "chmod +x ./.devcontainer/setup-angular-env.sh && ./.devcontainer/setup-angular-env.sh",
-
-	"remoteUser": "node",
-	
-	"containerEnv": {
-		"PATH": "/usr/local/share/npm-global/bin:/usr/local/share/nvm/versions/node/v12.22.12/bin:${containerEnv:PATH}",
-		"NODE_PATH": "/usr/local/share/npm-global/lib/node_modules",
-		"NG_CLI_OPTIONS": "--host 0.0.0.0 --port 4200 --disable-host-check",
-		"NG_CLI_HOST": "0.0.0.0",
-		"NG_CLI_PORT": "4200",
-		"NG_DISABLE_HOST_CHECK": "true"
 	}
 }
