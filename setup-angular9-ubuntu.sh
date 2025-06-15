@@ -35,6 +35,8 @@ if ! ng version 2>/dev/null | grep -q '9.1.9'; then
   npm install -g @angular/cli@9.1.9
 fi
 
+ng config --global analytics false
+
 current_dir=$(pwd)
 echo "The current directory is: $current_dir"
 
