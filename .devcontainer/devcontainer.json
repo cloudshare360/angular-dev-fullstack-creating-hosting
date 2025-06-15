@@ -16,7 +16,9 @@
 			},
 			"extensions": [
 				"streetsidesoftware.code-spell-checker",
-				"Angular.ng-template"
+				"Angular.ng-template",
+				"formulahendry.code-runner",
+				"esbenp.prettier-vscode"
 			]
 		}
 	},
