@@ -1,14 +1,17 @@
 {
-	"name": "Angular 9 Development",
-	"image": "mcr.microsoft.com/devcontainers/universal:2",
-	"features": {
-		"ghcr.io/devcontainers/features/node:1": {
-			"version": "12"
-		},
-		"ghcr.io/devcontainers-extra/features/angular-cli:2": {
-			"version": "9.1.9"
-		}
-	},
+	"name": "Angular 9 Development Environment",
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04", // A more generic base image
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "12" // Explicitly install Node.js 12
+        },
+        "ghcr.io/devcontainers-extra/features/angular-cli:2": {
+            "version": "9.1.9"
+        },
+        "ghcr.io/devcontainers/features/docker-in-docker:1": {
+            "version": "latest"
+        }
+    },
 	"customizations": {
 		"vscode": {
 			"settings": {
@@ -25,6 +28,9 @@
 			]
 		}
 	},
+	// Commands to run after the container is created
+	"postCreateCommand": "npm install -g @angular/cli@9 && npm install",
+	// Ports to forward from the container to your local machine
 	"forwardPorts": [
 		4200
 	],
@@ -34,5 +40,10 @@
 			"onAutoForward": "notify"
 		}
 	},
-	"postCreateCommand": "chmod +x ./setup-angular-env.sh && ./setup-angular-env.sh"
+	// Command to run when the devcontainer is launched (optional, for starting the dev server)
+	"postAttachCommand": {
+		"server": "npm start"
+	},
+	// Remote user to use within the container
+	"remoteUser": "node" // Use the default Node.js user in the image	
 }
