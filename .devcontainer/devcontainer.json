@@ -4,7 +4,10 @@
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {
 			"version": "12"
-		}
+		},
+		"ghcr.io/devcontainers-extra/features/angular-cli:2": {
+			"version": "9.1.9"
+		}		
 	},
 	"customizations": {
 		"vscode": {
