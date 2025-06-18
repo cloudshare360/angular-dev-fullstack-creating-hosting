@@ -1,43 +1,28 @@
 {
-    "name": "Angular 9 Development",
-    "image": "mcr.microsoft.com/devcontainers/universal:2",
-    "features": {
-        "ghcr.io/devcontainers/features/node:1": {
-            "version": "12"
-        }
-    },
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "terminal.integrated.shellArgs.linux": [
-                    "-l"
-                ],
-                "terminal.integrated.defaultProfile.linux": "bash"
-            },
-            "extensions": [
-                "streetsidesoftware.code-spell-checker",
-                "Angular.ng-template",
-                "formulahendry.code-runner",
-                "esbenp.prettier-vscode"
-            ]
-        }
-    },
-    // Commands to run after the container is created
-    "postCreateCommand": "npm install -g @angular/cli@9 && npm install",
-    // Ports to forward from the container to your local machine
-    "forwardPorts": [
-        4200
-    ],
-    "portsAttributes": {
-        "4200": {
-            "label": "Angular Dev Server",
-            "onAutoForward": "notify"
-        }
-    },
-    // Command to run when the devcontainer is launched (optional, for starting the dev server)
-    "postAttachCommand": {
-        "server": "npm start"
-    },
-    // Remote user to use within the container
-    "remoteUser": "node" // Use the default Node.js user in the image	
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "12"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "angular.ng-template",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "eg2.vscode-npm-script"
+      ]
+    }
+  },
+  "portsAttributes": {
+    "4200": {
+      "label": "Angular App",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "forwardPorts": [
+    4200
+  ],
+  "remoteUser": "codespace"
 }
